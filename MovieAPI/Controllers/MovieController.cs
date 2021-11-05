@@ -110,7 +110,8 @@ namespace MovieAPI.Controllers
                             MovieTitle=@MovieTitle,
                             ReleaseDate=@ReleaseDate,
                             ActorID=@ActorID,
-                            ProducerID=@ProducerID";
+                            ProducerID=@ProducerID 
+                            where MovieID=@MovieID";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("DefaultConnection");

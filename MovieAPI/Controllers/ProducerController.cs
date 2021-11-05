@@ -71,10 +71,11 @@ namespace MovieAPI.Controllers
         [HttpPut]
         public JsonResult Put(Producer producer)
         {
-            string query = @"update dbo.MoviesL
+            string query = @"update dbo.ProducerL
                             set ProducerID=@ProducerID,
                             ProducerName=@ProducerName,
-                            ProducerNationality=@ProducerNationality";
+                            ProducerNationality=@ProducerNationality 
+                            where ProducerID=@ProducerID";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("DefaultConnection");
